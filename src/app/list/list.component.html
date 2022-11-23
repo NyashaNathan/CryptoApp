@@ -1,0 +1,61 @@
+  <!-- Container-fluid starts-->
+  <div class="row">
+    <div class="col-xl-12 xl-100">
+      <div class="row">
+        <div class="card" style="background-color: rgb(37, 36, 57);">
+            <div class="card-header text-center" style="color: rgb(21, 94, 228); ">
+              <h1>Top 10 Coins in the Coingecko markets (Live) </h1>
+            </div>
+            <div class="card-body activity-scroll">
+              <table class="table table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Coin</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Price Change % (24h)</th>
+                        <th scope="col">Total Volume</th>
+                        <th scope="col">Market Cap</th>
+                        <th scope="col">Last Updated</th>
+                        <th scope="col text-center">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let coin of coins$ | async; let i = index" >
+                    <th scope="row">
+                      {{i + 1}}
+                    </th>
+                    <td>
+                      <img src="{{coin.image}}" style="width: 2rem" alt="{{coin.name}}"> <span>    {{coin.name}} </span> (<span>{{coin.symbol}}</span>)
+                    </td>
+                    <td>
+                      R {{coin.current_price.toLocaleString()}} 
+                    </td>
+                    <td [ngClass]="coin.price_change_percentage_24h > 0 ? 'text-success': 'text-danger'" > 
+                      {{coin.price_change_percentage_24h.toLocaleString()}}
+                    </td>
+                    <td>
+                      {{coin.total_volume}}
+                    </td>
+                    <td>
+                      {{coin.market_cap}}
+                    </td>
+                    <td>
+                      {{coin.last_updated | date: 'yyyy-MM-dd  HH:mm:ss'}}
+                    </td>
+                    <td> 
+                      <div class="user-badge">
+                        <button class="btn btn-outline-primary" (click)="viewCoin(coin.id)"> View more </button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Container-fluid Ends-->
+
+  
