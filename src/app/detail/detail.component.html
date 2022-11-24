@@ -1,0 +1,64 @@
+<div class="row">
+    <div class="col-xl-12 xl-100">
+      <section style="background-color: rgb(37, 36, 57);">
+          <div class="container py-5">
+            <div class="row justify-content-center">
+              <div class="col-md-10 col-lg-8 col-xl-4">
+                <div class="card" style="border-radius: 15px;">
+                  <div class="centerImage">
+                    <img src="{{coin.image.small}}"  class="centerImage" alt="{{coin.image}}" />  
+                    
+                    <div class="top-right-radius"> 
+                      <h1 class="text-center"> {{coin.name}} </h1>
+                                            
+                      <span class="small justify-content-right" style="background-color:rgb(127, 245, 227) "> Ranked {{coin.market_cap_rank}} in the market </span>
+                    </div>
+                  </div>
+                  <div class="card-body pb-0">
+                    <div class="d-flex justify-content-between">
+                      <div class="col-md-12">
+                        <p class="small text-dark" style="height: 125px; white-space: normal ; overflow: hidden; text-overflow: ellipsis;"> {{coin.description.en}} </p>
+                        <p class="medium text-center text-muted"> <a href="{{coin.links.homepage}}"> Click </a> to visit homepage </p>
+                      </div>                        
+                    </div>
+                  </div>
+                  <hr class="my-0" />
+                  <div class="card-body pb-0">
+                    <p class="small text-muted text-center"> Overview on {{coin.name}} </p>
+                    <div class="d-flex justify-content-between">
+                      <p class="medium text-dark"> Zar coin price: </p>
+                      <p class="text-dark"> <b> R {{coin.market_data.current_price.zar}} </b> </p>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                      <p class="medium text-dark"> Circulating Supply  </p>
+                      <p class="text-dark"> <b> {{coin.market_data.circulating_supply}} </b> </p>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                      <p class="medium text-dark"> Total Supply  </p>
+                      <p class="text-dark"> <b> {{coin.market_data.total_supply}} </b> </p>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                      <p class="medium text-dark">Sentiment votes up % <i class="fa fa-arrow-up"> </i> </p>
+                      <p class="text-success"> <b> {{coin.sentiment_votes_up_percentage}} % </b> </p>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                      <p class="medium text-dark">Sentiment votes down % <i class="fa fa-arrow-up"> </i> </p>
+                      <p class="text-danger"> <b> {{coin.sentiment_votes_down_percentage}} % </b> </p>
+                    </div>
+                  </div>
+                  <hr class="my-0" />
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center pb-2 mb-1">
+                      <a href="" class="text-dark fw-bold">Cancel</a>
+                      <button type="button" class="btn btn-primary">Buy now</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+    </div>
+</div>
+
+  
